@@ -6,7 +6,7 @@ Aplicacion web y API para estimar de forma orientativa la condicion visual de ca
 
 ## Estado actual
 
-Hito 1 completado parcialmente:
+Hitos completados:
 
 - Estructura base del proyecto.
 - Backend con FastAPI.
@@ -15,6 +15,8 @@ Hito 1 completado parcialmente:
 - Endpoint de salud `/health`.
 - Endpoint de busqueda por ID `/api/v1/card/{card_id}`.
 - Endpoint de busqueda por nombre `/api/v1/search?name=...`.
+- Notebook inicial de EDA con Pokemon TCG API.
+- Generador de dataset sintetico para `mint`, `played` y `damaged`.
 
 ## Alcance del MVP
 
@@ -65,12 +67,16 @@ pokemon-psa-grader/
 │   └── main.py
 ├── data/
 │   ├── raw/
-│   └── processed/
+│   ├── processed/
+│   └── synthetic/
 ├── docs/
 │   └── memoria_inicial.ipynb
 ├── frontend/
 ├── models/
 ├── notebooks/
+│   └── eda_pokemon_tcg.ipynb
+├── scripts/
+│   └── generate_synthetic_dataset.py
 ├── tests/
 ├── Memoria.ipynb
 ├── README.md
