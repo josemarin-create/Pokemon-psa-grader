@@ -12,6 +12,8 @@ venv/
 # Local data files
 data/raw/*
 data/processed/*
+data/synthetic/*
+!data/synthetic/.gitkeep
 !data/raw/.gitkeep
 !data/processed/.gitkeep
 
