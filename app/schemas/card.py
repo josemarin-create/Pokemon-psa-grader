@@ -42,3 +42,20 @@ class CardSearchItem(BaseModel):
     set_name: str
     rarity: str | None = None
     image_url: str | None = None
+
+
+class AppraisalResponse(BaseModel):
+    # ID y nombre para saber de qué carta hablamos
+    card_id: str
+    card_name: str
+    
+    # Precio original de mercado
+    market_price: float | None
+    
+    # Datos de la IA
+    predicted_condition: str
+    ai_confidence: float
+    
+    # El precio final tasado y el factor matemático aplicado
+    adjusted_price: float | None
+    condition_multiplier: float
