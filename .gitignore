@@ -17,16 +17,6 @@ data/synthetic/*
 !data/raw/.gitkeep
 !data/processed/.gitkeep
 
-# Trained model files
-models/*
-!models/.gitkeep
-!models/modelo_pokemon.h5
-*.h5
-*.keras
-*.pkl
-*.pt
-*.joblib
-
 # Notebook checkpoints
 .ipynb_checkpoints/
 
