@@ -177,4 +177,4 @@ def generate_dataset(limit: int = 20) -> None:
 
 
 if __name__ == "__main__":
-    generate_dataset(limit=40)
+    generate_dataset(limit=120)
