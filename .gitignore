@@ -20,6 +20,7 @@ data/synthetic/*
 # Trained model files
 models/*
 !models/.gitkeep
+!models/modelo_pokemon.h5
 *.h5
 *.keras
 *.pkl
@@ -32,3 +33,7 @@ models/*
 # Operating system files
 .DS_Store
 Thumbs.db
+
+# Claves
+keys/
+*.pem
