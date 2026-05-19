@@ -1,3 +1,5 @@
+import os
+
 import streamlit as st
 import requests
 
@@ -85,12 +87,13 @@ if st.session_state.search_results:
             if st.button("🔴 TASAR CON IA AHORA", use_container_width=True):
                 with st.spinner("Analizando micro-roturas y estado de los bordes..."):
                     try:
-                        # Conectar con tu servidor de AWS
-                        url_aws = "http://16.171.15.135:8000/api/v1/appraise"
+                        # Conectar con el backend configurado por variable de entorno.
+                        api_base_url = os.getenv("API_BASE_URL", "http://127.0.0.1:8000")
+                        url_appraise = f"{api_base_url}/api/v1/appraise"
                         files = {"file": (uploaded_file.name, uploaded_file.getvalue(), uploaded_file.type)}
                         data = {"card_id": card_id}
                         
-                        response = requests.post(url_aws, files=files, data=data)
+                        response = requests.post(url_appraise, files=files, data=data, timeout=60)
                         
                         if response.status_code == 200:
                             resultado = response.json()
