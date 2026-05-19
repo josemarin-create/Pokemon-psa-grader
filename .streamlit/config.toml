@@ -1,0 +1,10 @@
+[theme]
+# Rojo Pokéball oficial
+primaryColor = "#EE1515"
+# Blanco inmaculado
+backgroundColor = "#FFFFFF"
+# Gris muy claro para las cajas secundarias (tipo Pokédex)
+secondaryBackgroundColor = "#F0F2F6"
+# Texto oscuro para contraste
+textColor = "#262730"
+font = "monospace"
