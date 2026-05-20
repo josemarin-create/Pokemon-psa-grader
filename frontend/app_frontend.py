@@ -109,7 +109,11 @@ if st.session_state.search_results:
                             
                             st.caption(f"🤖 Confianza de la red neuronal: {round(resultado['ai_confidence'] * 100, 2)}%")
                         else:
-                            st.error(f"Error del servidor: {response.json().get('detail', 'Desconocido')}")
+                            try:
+                                error_msg = response.json().get('detail', 'Desconocido')
+                            except Exception:
+                                error_msg = response.text  # Si no es JSON, saca el texto crudo
+                            st.error(f"Error del servidor (Código {response.status_code}): {error_msg}")
                             
                     except requests.exceptions.ConnectionError:
                         st.error("🚨 Error crítico: No se puede conectar con el servidor en AWS. ¿Está encendido?")
