@@ -3,7 +3,6 @@ import numpy as np
 from io import BytesIO
 from PIL import Image
 from tensorflow.keras.models import load_model
-from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
 
 # 1. Apuntar al modelo físico
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -35,7 +34,6 @@ def predict_condition(image_bytes: bytes) -> dict:
     # 3. Convertir a matriz matemática y aplicar el preprocesado oficial de MobileNet
     img_array = np.array(img, dtype=np.float32)
     img_array = np.expand_dims(img_array, axis=0) # Convertir a lote (batch) de 1
-    img_array = preprocess_input(img_array)
     
     # 4. Magia negra (Predicción)
     predictions = model.predict(img_array)
